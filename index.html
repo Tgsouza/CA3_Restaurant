@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="JS/scripts.js" defer></script>
+    <title>Restaurant</title>
+</head>
+<body>
+    <div class="row">
+  
+        <header>
+            <nav>
+                
+                
+                <div class="row">
+                      
+                   <!-- ---NAV BAR--- -->
+                   <ul class="main-nav">
+                       <li><a href="#">News</a></li>
+                       <li><a href="#">Blog</a></li>
+                       <li><a href="#">Forum</a></li>
+                       <li><a href="#">About</a></li>
+                   </ul> 
+    
+                </div>
+                </nav>
+        </header>
+
+        <!-- STAFF PASSWORD VALIDATOR -->
+        <div class="staffPass">
+
+            <h1>STAFF PASSWORD</h1>
+
+            <form onsubmit="return verifyPass()">
+            <td>Enter Password: </td>
+            <input type="password" id="pswd" value="">
+            <span id="message" style="color:red"></span><br>
+
+            <input type="submit" value="Submit">
+            
+            <button type="reset" value="Reset">Reset</button>
+            </form>
+        
+
+        </div>
+
+    
+        </div>
+</body>
+</html>

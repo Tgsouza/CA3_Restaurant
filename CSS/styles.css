@@ -9,13 +9,18 @@
 }
 html{
     
-    background-color: white ;
-    font-family: 'Poppins', sans-serif, 'Arial';
+    background-image: url("../img/Restaurant-bg.png");
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;   
+    font-family: sans-serif;
     font-size: 20px;
     font-weight: 300;   
     text-rendering: optimizeLegibility;
 
 }
+
 
 /*---------------*/
 /* HEADINGS */
@@ -48,10 +53,11 @@ p{
     font-family: sans-serif;
     color:  black ;
     position: center;
-    margin: 50px;
-    margin-top: 19px;
+    margin: 1px;
+    margin-top: 5px;
     font-size:19px;
     word-spacing: 150%;
+    text-align: center;
 }
 /*---------------*/
 /* HEADER*/
@@ -78,8 +84,9 @@ header{
 }
 .main-nav li a:link,
 .main-nav li a:visited{
+    
     padding: 8px 0;
-    color: black;
+    color: #4B5358;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 90%;
@@ -89,7 +96,7 @@ header{
 }
 .main-nav li a:hover,
 .main-nav li a:active{
-    border-bottom: 2px solid rgba(255, 0, 0, 0.568);
+    border-bottom: 2px solid #D2D6EF;
 
 }
 
@@ -98,10 +105,67 @@ header{
 /*---------------*/
 
 .staffPass{
+    
     position:center;
     text-align: center;
     border: 2px solid black;
-    padding-bottom: 10px;
-    
-    
+    padding: 20px 20px;
+    width: 80%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+          
 }
+
+#passValidation{
+
+    display:none;
+    position: relative;
+    padding: 10px;
+    margin-top: 4px;
+    text-align: center;
+
+}
+
+.valid{
+    color: greenyellow;
+}
+
+.valid:before{
+    position:relative;
+    left: -8px;
+    content:url("/img/passValidation/true.png");
+    top: 3px;
+}
+
+.invalid{
+    color: grey;
+}
+
+.invalid::before{
+    position: relative;
+    left: -8px;
+    top: 3px;
+    content: url("/img/passValidation/false.png");
+}
+
+.submitButton, .resetButton{
+    
+    background-color: white; 
+    border: 2px solid #f44336;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+
+}
+
+.submitButton:hover, .resetButton:hover{
+    background-color: #f44336;
+    color: white;
+}
+
+

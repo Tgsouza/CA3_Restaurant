@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="row">
-  
+        
         <header>
             <nav>
                 
@@ -34,16 +34,33 @@
 
             <h1>STAFF PASSWORD</h1>
 
+            <!-- Password form -->
             <form onsubmit="return verifyPass()">
+
             <td>Enter Password: </td>
+
+            <!-- User input for password -->
             <input type="password" id="pswd" value="">
             <span id="message" style="color:red"></span><br>
-
-            <input type="submit" value="Submit">
             
-            <button type="reset" value="Reset">Reset</button>
+            <!-- Submit and Reset buttons -->
+            <input type="submit" class="submitButton" value="Submit">  
+            <button type="reset" class="resetButton" value="Reset">Reset</button>
+
             </form>
-        
+            
+            <!-- VALIDATOR -->
+            <div id="passValidation">
+
+                <h3>Password Must Contain The Following:</h3>
+
+                <p id="lowerCase" class="invalid">One lowercase character</p>
+                <p id="upperCase" class="invalid">One Uppercase character</p>
+                <p id="specChar" class="invalid">One special character</p>
+                <p id="hasNum" class="invalid">One digit</p>
+                <p id="minChar" class="invalid">At least 8 characters</p>
+
+            </div>
 
         </div>
 

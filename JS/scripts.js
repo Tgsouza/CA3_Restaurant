@@ -104,4 +104,39 @@ myInput.onkeyup = function(){
         minChar.classList.remove("valid");
         minChar.classList.add("invalid");
     }
+
+    //USER GENERATOR//
+
+    //add the function to the customer generator button
+    document.getElementById('customer_button').addEventListener('click', getRandom);
+
+    //Function to get a random customer using a JSON API
+    function getRandom(){
+        // change the adress
+        fetch('https://randomuser.me/api/?results=1')
+        .then((res) => res.json())
+        .then((data) => {
+            let author = data.results;
+            let output = '<h2>Users</h2>'
+            console.log(data);
+            author.forEach(function(user){
+                output += `
+                <div class="each_customer">
+                    <th>NAME:${user.name.first} ${user.name.last}</th><br>
+                    <tr><img src=" ${user.picture.large}"></tr><br>
+                    <tr>Cellphone: ${user.cell}</tr><br>
+                    <tr>Date of birth: ${user.registered.date}</tr><br>
+                    <tr>Age: ${user.registered.age}</tr><br>
+                    <tr>Email: ${user.email}</tr><br>
+                    <tr>Location: ${user.location.city}</tr><br>
+                    
+                    
+                </div>
+                `;
+            });
+
+            document.getElementById('output').innerHTML = output;   
+
+        })
+    }
 }

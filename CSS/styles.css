@@ -15,7 +15,7 @@
 }
 html{
     
-    background-image: url("../img/Restaurant-bg.png");
+    /*background-image: url("../img/Restaurant-bg.png");*/
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat; 
@@ -110,7 +110,7 @@ header{
 /*Staff Validator*/
 /*---------------*/
 
-.staffPass, .customer_gen, .each_customer{
+.staffPass{
     
     position:center;
     text-align: center;
@@ -155,7 +155,7 @@ header{
     content: url("D:/College/Client Side Programing/CA3/CA3_Restaurant/img/passValidation/false.png");
 }
 
-.submitButton, .resetButton{
+.submitButton, .resetButton, .customer_button{
     
     background-color: white; 
     border: 2px solid #f44336;
@@ -173,4 +173,66 @@ header{
     background-color: #f44336;
     color: white;
 }
+
+/*---------------*/
+/*CUSTOMER GENERATOR*/
+/*---------------*/
+
+.customer_gen, .each_customer{
+    
+    position:center;
+    text-align: center;
+    border: 2px solid black;
+    padding: 20px 20px;
+    width: 60%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+                  
+}
+.each_customer{
+    background-color:#D2D6EF;
+}
+#customer_button{
+    
+    background-color: white; 
+    border: 2px solid #f44336;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+}
+#customer_button:hover{
+    background-color: #f44336;
+    color: white;
+}
+
+/*---------------*/
+/*FOOD LIST*/
+/*---------------*/
+.food_form{
+    text-align: center;
+    position:center;
+    border: 2px solid black;
+    padding: 20px 20px;
+    width: 60%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+                  
+}
+
+table{
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+th{
+    padding: 20px 20px;
+    width: 45%;
+}
+
 

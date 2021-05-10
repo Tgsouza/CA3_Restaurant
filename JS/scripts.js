@@ -113,11 +113,11 @@ myInput.onkeyup = function(){
     //Function to get a random customer using a JSON API
     function getRandom(){
         // change the adress
-        fetch('https://randomuser.me/api/?results=1')
+        fetch('https://randomuser.me/api/?results=5')
         .then((res) => res.json())
         .then((data) => {
             let author = data.results;
-            let output = '<h2>Users</h2>'
+            let output = '<h2>Customers</h2>'
             console.log(data);
             author.forEach(function(user){
                 output += `
@@ -135,7 +135,7 @@ myInput.onkeyup = function(){
                 `;
             });
 
-            document.getElementById('output').innerHTML = output;   
+            document.getElementById('customer_output').innerHTML = output;   
 
         })
     }

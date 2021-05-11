@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,25 +10,26 @@
     <script src="JS/menu.js" defer></script>
     <title>Restaurant</title>
 </head>
+
 <body>
     <div class="row">
         <!-- HEADER FOR THE WEBPAGE -->
         <header>
             <nav>
-                
-                
+
+
                 <div class="row">
-                      
-                   <!-- ---NAV BAR--- -->
-                   <ul class="main-nav">
-                       <li><a href="#">News</a></li>
-                       <li><a href="#">Blog</a></li>
-                       <li><a href="#">Forum</a></li>
-                       <li><a href="#">About</a></li>
-                   </ul> 
-    
+
+                    <!-- ---NAV BAR--- -->
+                    <ul class="main-nav">
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+
                 </div>
-                </nav>
+            </nav>
         </header>
 
         <!-- STAFF PASSWORD VALIDATOR -->
@@ -38,18 +40,18 @@
             <!-- Password form -->
             <form onsubmit="return verifyPass()">
 
-            <td>Enter Password: </td>
+                <td>Enter Password: </td>
 
-            <!-- User input for password -->
-            <input type="password" id="pswd" value="">
-            <span id="message" style="color:red"></span><br>
-            
-            <!-- Submit and Reset buttons -->
-            <input type="submit" class="submitButton" value="Submit">  
-            <button type="reset" class="resetButton" value="Reset">Reset</button>
+                <!-- User input for password -->
+                <input type="password" id="pswd" value="">
+                <span id="message" style="color:red"></span><br>
+
+                <!-- Submit and Reset buttons -->
+                <input type="submit" class="submitButton" value="Submit">
+                <button type="reset" class="resetButton" value="Reset">Reset</button>
 
             </form>
-            
+
             <!-- VALIDATOR -->
             <div id="passValidation">
 
@@ -62,24 +64,24 @@
                 <p id="minChar" class="invalid">At least 8 characters</p>
 
             </div>
-                
-        </div>
-        
-    
-        </div>
-        <!-- USER GENERATOR --> 
-        <div class="customer_gen">
-            
-            <button id="customer_button">See customers</button>
-            <div id="customer_output"></div>
-         
-        </div>
-        <!-- FORM FOR THE FOOD COST -->
-        <div class ="food_form">
 
-            <table>
+        </div>
+
+
+    </div>
+    <!-- USER GENERATOR -->
+    <div class="customer_gen">
+
+        <button id="customer_button">See customers</button>
+        <div id="customer_output"></div>
+
+    </div>
+    <!-- FORM FOR THE FOOD TABLE -->
+    <div class="food_form">
+
+        <table>
             <tr>
-
+                <!-- TABLE HEAD -->
                 <th scope="col">Item</th>
                 <th scope="col">Description</th>
                 <th scope="col">Price</th>
@@ -88,81 +90,95 @@
 
 
             </tr>
+            <!-- MENU CREATED USING JQUERY, THE TABLE WILL BE MOUNTED USING THE ID OF THE TBODY -->
             <th>Starters</th>
-            <tbody id="starters">         </tbody>
+            <tbody id="starters"> </tbody>
             <th>Main</th>
-            <tbody id="mains">         </tbody>
+            <tbody id="mains"> </tbody>
             <th>Desserts</th>
-            <tbody id="desserts">         </tbody>
+            <tbody id="desserts"> </tbody>
             <th>Drinks</th>
-            <tbody id="drinks">         </tbody>
-            
-                        
-            <!-- <th>Bill info</th>
-            <tr>
-                <td class="total">
-                    <input type="button" onclick = "Total_calculator()" value = "Total">
-                <td class="total right"><strong>Total: </strong></td>
-                <td class="total">
-                <strong>
-                    <div id="ItemsTotal">£ 0</div>
-                </strong>
-                </td>
-            </tr>
+            <tbody id="drinks"> </tbody>
+
+            <!-- BILL BREAKDOWN -->
+            <th>Bill Breakdown</th>
             <tr>
                 <td class="totalStarter"></td>
                 <td class="totalStarter right">Starters: </td>
+                <td class="totalStarter"></td>
                 <td class="totalStarter">
-                <strong>
-                    <div id="StrTotal">£ 0</div>
-                </strong>
-            </td>
+                    <strong>
+                        <div id="StrTotal">£ 0</div>
+                    </strong>
+                </td>
             </tr>
             <tr>
                 <td class="totalMain"></td>
                 <td class="totalMain right">Mains: </td>
+                <td class="totalMain"></td>
                 <td class="totalMain">
-                <strong>
-                    <div id="MainTotal">£ 0</div>
-                </strong>
-            </td>
+                    <strong>
+                        <div id="MainTotal">£ 0</div>
+                    </strong>
+                </td>
             </tr>
             <tr>
                 <td class="totalDes"></td>
                 <td class="totalDes right">Desserts: </td>
+                <td class="totalDes"></td>
                 <td class="totalDes">
-                <strong>
-                    <div id="DesTotal">£ 0</div>
-                </strong>
-            </td>
+                    <strong>
+                        <div id="DesTotal">£ 0</div>
+                    </strong>
+                </td>
             </tr>
             <tr>
                 <td class="totalDrk"></td>
                 <td class="totalDrk right">Drinks: </td>
+                <td class="totalDrk"></td>
                 <td class="totalDrk">
-                <strong>
-                    <div id="DrkTotal">£ 0</div>
-                </strong>
-            </td>
-            </tr> -->
+                    <strong>
+                        <div id="DrkTotal">£ 0</div>
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="totalDrk"></td>
+                <td class="totalDrk right">Total Vegetarian: </td>
+                <td class="totalDrk"></td>
+                <td class="totalVeg">
+                    <strong>
+                        <div id="VegTotal">£ 0</div>
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="totalVe"></td>
+                <td class="totalVe right">Total Non-Vegetarian: </td>
+                <td class="totalVe"></td>
+                <td class="totalVe">
+                    <strong>
+                        <div id="NonVegTotal">£ 0</div>
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="totalValue"></td>
+                <td class="totalValue right">Total Bill: </td>
+                <td class="totalValue"></td>
+                <td class="totalValue">
+                    <strong>
+                        <div id="TotalValue">£ 0</div>
+                    </strong>
+                </td>
+            </tr>
 
         </table>
-        
+
         <table>
 
         </table>
-        </div>
-        
-    
-
-    <!--<table>
-
-        <th>Menu</th>
-
-        <ul id="menu"></ul>
-    
-        <input type="button" onClick="calcVegetarian()">
-
-    </table>-->
+    </div>
 </body>
+
 </html>

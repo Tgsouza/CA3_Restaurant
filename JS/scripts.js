@@ -1,32 +1,32 @@
 //PASSWORD CHECK//
-function verifyPass(){
-     
-//Getting input from the user
+function verifyPass() {
+
+    //Getting input from the user
     var pass = document.getElementById("pswd").value;
 
-/*Variable with the RegEx containing the rules to a valid password    
-(?=.*[a-z]) - Must contain at least one lowercase char
-(?=.*[A-Z]) - Must contain at least one uppercase char
-(?=.*[0-9]) - Must contain one number from
-(?=.*[!@#$%^&*]) - Must contain one special char
-(?=.{8,}) - Must have at least 8 char*/
+    /*Variable with the RegEx containing the rules to a valid password    
+    (?=.*[a-z]) - Must contain at least one lowercase char
+    (?=.*[A-Z]) - Must contain at least one uppercase char
+    (?=.*[0-9]) - Must contain one number from
+    (?=.*[!@#$%^&*]) - Must contain one special char
+    (?=.{8,}) - Must have at least 8 char*/
     var passRules = /"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"/;
-    
-//PASS VALIDATION//
-    if(pass ==""){
-    
-        document.getElementById("message").innerHTML="Fill the password to proceed!";
+
+    //PASS VALIDATION//
+    if (pass == "") {
+
+        document.getElementById("message").innerHTML = "Fill the password to proceed!";
         return false;
 
-    }else if (pass.match(/[a-z]/g) && pass.match(/[A-Z]/g) && pass.match(/[!@#$%^&*]/g)&& pass.match(/[0-9]/g) && pass.match(/[^a-zA-Z\d]/g) && pass.length >= 8){
+    } else if (pass.match(/[a-z]/g) && pass.match(/[A-Z]/g) && pass.match(/[!@#$%^&*]/g) && pass.match(/[0-9]/g) && pass.match(/[^a-zA-Z\d]/g) && pass.length >= 8) {
 
-        document.getElementById("message").innerHTML="Valid Password";
+        document.getElementById("message").innerHTML = "Valid Password";
         document.getElementById("message").style.color = "Green";
         return false;
 
-    }else{
+    } else {
 
-        document.getElementById("message").innerHTML="Invalid ! Check the password validations!";
+        document.getElementById("message").innerHTML = "Invalid ! Check the password validations!";
         document.getElementById("message").style.color = "Red";
         return false;
 
@@ -43,64 +43,64 @@ var hasNum = document.getElementById("hasNum");
 var minChar = document.getElementById("minChar");
 
 //Show Validation box//
-myInput.onfocus = function(){
+myInput.onfocus = function () {
 
-    document.getElementById("passValidation").style.display="block";
+    document.getElementById("passValidation").style.display = "block";
 
 }
 
 //Hide the validation box//
-myInput.onblur = function(){
+myInput.onblur = function () {
 
-    document.getElementById("passValidation").style.display="none";
+    document.getElementById("passValidation").style.display = "none";
 
 }
 
 //Check the password strength when user starts to type//
 
-myInput.onkeyup = function(){
+myInput.onkeyup = function () {
 
     var lowerCheck = /[a-z]/g;
-    if(myInput.value.match(lowerCheck)){
+    if (myInput.value.match(lowerCheck)) {
         lowerCase.classList.remove("invalid");
         lowerCase.classList.add("valid");
 
-    }else{
+    } else {
         lowerCase.classList.remove("valid");
         lowerCase.classList.add("invalid");
     }
 
     var upperCheck = /[A-Z]/g;
-    if(myInput.value.match(upperCheck)){
+    if (myInput.value.match(upperCheck)) {
         upperCase.classList.remove("invalid");
         upperCase.classList.add("valid");
-    }else{
+    } else {
         upperCase.classList.remove("valid");
         upperCase.classList.add("invalid");
     }
 
     var numCheck = /[0-9]/g;
-    if(myInput.value.match(numCheck)){
+    if (myInput.value.match(numCheck)) {
         hasNum.classList.remove("invalid");
         hasNum.classList.add("valid");
-    }else{
+    } else {
         hasNum.classList.remove("valid");
         hasNum.classList.add("invalid");
     }
 
     var specCheck = /[!@#$%^&*]/g;
-    if(myInput.value.match(specCheck)){
+    if (myInput.value.match(specCheck)) {
         specChar.classList.remove("invalid");
         specChar.classList.add("valid");
-    }else{
+    } else {
         specChar.classList.remove("valid");
         specChar.classList.add("invalid");
     }
 
-    if(myInput.value.length >= 8){
+    if (myInput.value.length >= 8) {
         minChar.classList.remove("invalid");
         minChar.classList.add("valid");
-    }else{
+    } else {
         minChar.classList.remove("valid");
         minChar.classList.add("invalid");
     }
@@ -111,16 +111,16 @@ myInput.onkeyup = function(){
     document.getElementById('customer_button').addEventListener('click', getRandom);
 
     //Function to get a random customer using a JSON API
-    function getRandom(){
+    function getRandom() {
         // change the adress
         fetch('https://randomuser.me/api/?results=5')
-        .then((res) => res.json())
-        .then((data) => {
-            let author = data.results;
-            let output = '<h2>Customers</h2>'
-            console.log(data);
-            author.forEach(function(user){
-                output += `
+            .then((res) => res.json())
+            .then((data) => {
+                let author = data.results;
+                let output = '<h2>Customers</h2>'
+                console.log(data);
+                author.forEach(function (user) {
+                    output += `
                 <div class="each_customer">
                     <th>NAME:${user.name.first} ${user.name.last}</th><br>
                     <tr><img src=" ${user.picture.large}"></tr><br>
@@ -133,17 +133,17 @@ myInput.onkeyup = function(){
                     
                 </div>
                 `;
-            });
+                });
 
-            document.getElementById('customer_output').innerHTML = output;   
+                document.getElementById('customer_output').innerHTML = output;
 
-        })
+            })
     }
-    
+
 }
-    //FOOD MENU CALCULATOR//
-    
-    var total_items = 12;
+//FOOD MENU CALCULATOR//
+
+var total_items = 12;
 //Creates a function to calculate the value of the items//
 /*function CalculateItemsValue(){
 
@@ -166,7 +166,7 @@ document.querySelectorAll('[id^="qnt_"]').forEach(item =>{
     });
 
 
-var total_value = 0;   
+var total_value = 0;
 var total_starters = 3;
 
 function CalculateStarters(){
@@ -175,7 +175,7 @@ function CalculateStarters(){
     for (let i = 1; i<= total_starters; i++){
         itemID = document.getElementById("str_" + i);
         total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
-        
+
     }
 
     if(total != 0){
@@ -194,7 +194,7 @@ document.querySelectorAll('[id^="str_"]').forEach(item =>{
 var total_mains = 3;
 
 function CalculateMain(){
-    
+
     var total=0;
 
     for (let i = 1; i<= total_mains; i++){
@@ -207,7 +207,7 @@ function CalculateMain(){
         total_value += total;
     }else{
         document.getElementById("MainTotal").dataset;
-    }    
+    }
     document.getElementById('MainTotal').innerHTML = "£ " + total;
 
 }
@@ -219,7 +219,7 @@ document.querySelectorAll('[id^="main_"]').forEach(item =>{
 var total_des = 3;
 
 function CalculateDes(){
-    
+
     var total=0;
 
     for (let i = 1; i<= total_mains; i++){
@@ -233,7 +233,7 @@ function CalculateDes(){
         document.getElementById("DesTotal").dataset;
     }
     document.getElementById('DesTotal').innerHTML = "£ " + total;
-    
+
 
 
 }
@@ -245,14 +245,14 @@ document.querySelectorAll('[id^="des_"]').forEach(item =>{
 var total_drk = 3;
 
 function CalculateDrk(){
-    
+
     var total=0;
 
     for (let i = 1; i<= total_drk; i++){
         itemID = document.getElementById("drk_" + i);
         total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
     }
-    
+
     if(total != 0){
         total_value += total;
     }else{
@@ -273,7 +273,7 @@ function Total_calculator(){
 
 }
 function Total_reset(){
-    
+
     total_value = 0;
     document.getElementById("ItemsTotal").innerHTML = total_value;
 

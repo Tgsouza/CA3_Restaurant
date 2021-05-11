@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="JS/scripts.js" defer></script>
+    <script src="JS/menu.js" defer></script>
     <title>Restaurant</title>
 </head>
 <body>
     <div class="row">
-        
+        <!-- HEADER FOR THE WEBPAGE -->
         <header>
             <nav>
                 
@@ -73,94 +74,95 @@
             <div id="customer_output"></div>
          
         </div>
-
-        <!-- Form for the food cost -->
-
+        <!-- FORM FOR THE FOOD COST -->
         <div class ="food_form">
+
             <table>
             <tr>
 
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th scope="col">Item</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+
+
 
             </tr>
-            <th>STARTERS</th>
+            <th>Starters</th>
+            <tbody id="starters">         </tbody>
+            <th>Main</th>
+            <tbody id="mains">         </tbody>
+            <th>Desserts</th>
+            <tbody id="desserts">         </tbody>
+            <th>Drinks</th>
+            <tbody id="drinks">         </tbody>
+            
+                        
+            <!-- <th>Bill info</th>
             <tr>
-                <td>Chicken Wings</td>
-                <td><input name="qnt_1" type="text" id="qnt_1" value="0" size="3" data-price="7"></td>
-                <td>£ 7</td>
-            </tr>
-            <tr>
-                <td>Mini Avocado Toast</td>
-                <td><input name="qnt_2" type="text" id="qnt_2" value="0" size="3" data-price="6"></td>
-                <td>£ 6</td>
-            </tr>
-            <tr>
-                <td>Beans n' Greens</td>
-                <td><input name="qnt_3" type="text" id="qnt_3" value="0" size="3" data-price="6"></td>
-                <td>£ 6</td>
-            </tr>
-            <th>MAIN COURSE</th>
-            <tr>
-                <td>Chicken Burger</td>
-                <td><input name="qnt_4" type="text" id="qnt_4" value="0" size="3" data-price="16"></td>
-                <td>£ 16</td>
-            </tr>
-            <tr>
-                <td>Dahl Curry</td>
-                <td><input name="qnt_5" type="text" id="qnt_5" value="0" size="3" data-price="14"></td>
-                <td>£ 14</td>
-            </tr>
-            <tr>
-                <td>Eggs Benedict</td>
-                <td><input name="qnt_6" type="text" id="qnt_6" value="0" size="3" data-price="14"></td>
-                <td>£ 14</td>
-            </tr>
-            <th>DESERTS</th>
-            <tr>
-                <td>Nutella Waffles</td>
-                <td><input name="qnt_7" type="text" id="qnt_7" value="0" size="3" data-price="7"></td>
-                <td>£ 7</td>
-            </tr>
-            <tr>
-                <td>Chocolate Brownie</td>
-                <td><input name="qnt_8" type="text" id="qnt_8" value="0" size="3" data-price="7"></td>
-                <td>£ 7</td>
-            </tr>
-            <tr>
-                <td>Mini Doughnuts</td>
-                <td><input name="qnt_9" type="text" id="qnt_9" value="0" size="3" data-price="6"></td>
-                <td>£ 6</td>
-            </tr>
-            <th>DRINKS</th>
-            <tr>
-                <td>House Lager</td>
-                <td><input name="qnt_10" type="text" id="qnt_10" value="0" size="3" data-price="5"></td>
-                <td>£ 5</td>
-            </tr>
-            <tr>
-                <td>Juice</td>
-                <td><input name="qnt_11" type="text" id="qnt_11" value="0" size="3" data-price="3"></td>
-                <td>£ 3</td>
-            </tr>
-            <tr>
-                <td>Soda</td>
-                <td><input name="qnt_12" type="text" id="qnt_12" value="0" size="3" data-price="2"></td>
-                <td>£ 2</td>
-            </tr>
-            <tr>
-                <td class="total"></td>
+                <td class="total">
+                    <input type="button" onclick = "Total_calculator()" value = "Total">
                 <td class="total right"><strong>Total: </strong></td>
-                <td class="total"><strong>
+                <td class="total">
+                <strong>
                     <div id="ItemsTotal">£ 0</div>
-                </strong></td>
+                </strong>
+                </td>
             </tr>
+            <tr>
+                <td class="totalStarter"></td>
+                <td class="totalStarter right">Starters: </td>
+                <td class="totalStarter">
+                <strong>
+                    <div id="StrTotal">£ 0</div>
+                </strong>
+            </td>
+            </tr>
+            <tr>
+                <td class="totalMain"></td>
+                <td class="totalMain right">Mains: </td>
+                <td class="totalMain">
+                <strong>
+                    <div id="MainTotal">£ 0</div>
+                </strong>
+            </td>
+            </tr>
+            <tr>
+                <td class="totalDes"></td>
+                <td class="totalDes right">Desserts: </td>
+                <td class="totalDes">
+                <strong>
+                    <div id="DesTotal">£ 0</div>
+                </strong>
+            </td>
+            </tr>
+            <tr>
+                <td class="totalDrk"></td>
+                <td class="totalDrk right">Drinks: </td>
+                <td class="totalDrk">
+                <strong>
+                    <div id="DrkTotal">£ 0</div>
+                </strong>
+            </td>
+            </tr> -->
+
+        </table>
+        
+        <table>
 
         </table>
         </div>
         
+    
 
+    <!--<table>
 
+        <th>Menu</th>
+
+        <ul id="menu"></ul>
+    
+        <input type="button" onClick="calcVegetarian()">
+
+    </table>-->
 </body>
 </html>

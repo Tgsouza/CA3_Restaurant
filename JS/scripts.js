@@ -139,15 +139,17 @@ myInput.onkeyup = function(){
 
         })
     }
+    
 }
     //FOOD MENU CALCULATOR//
-
+    
     var total_items = 12;
-
-function CalculateItemsValue(){
+//Creates a function to calculate the value of the items//
+/*function CalculateItemsValue(){
 
     var total =0;
 
+    //Creates a loop that will loop throught the items and change the total value using the attribute "data-price" from the inputs
     for(let i = 1; i <= total_items; i++){
 
         itemID = document.getElementById("qnt_" + i);
@@ -158,7 +160,142 @@ function CalculateItemsValue(){
 
 }
 
+//Function to select all items with the ID starting with "qnt_". For each of the itens use the keyup eventlistener to call the function CalculateItemsValue
 document.querySelectorAll('[id^="qnt_"]').forEach(item =>{
         item.addEventListener('keyup', CalculateItemsValue);
     });
+
+
+var total_value = 0;   
+var total_starters = 3;
+
+function CalculateStarters(){
+    var total=0;
+
+    for (let i = 1; i<= total_starters; i++){
+        itemID = document.getElementById("str_" + i);
+        total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+        
+    }
+
+    if(total != 0){
+            total_value += total;
+    }else{
+        document.getElementById("StrTotal").dataset;
+
+    }
+    document.getElementById('StrTotal').innerHTML = "£ " + total;
+}
+document.querySelectorAll('[id^="str_"]').forEach(item =>{
+    item.addEventListener('keyup', CalculateStarters);
+
+});
+
+var total_mains = 3;
+
+function CalculateMain(){
+    
+    var total=0;
+
+    for (let i = 1; i<= total_mains; i++){
+        itemID = document.getElementById("main_" + i);
+        total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+
+    }
+
+    if(total != 0){
+        total_value += total;
+    }else{
+        document.getElementById("MainTotal").dataset;
+    }    
+    document.getElementById('MainTotal').innerHTML = "£ " + total;
+
+}
+document.querySelectorAll('[id^="main_"]').forEach(item =>{
+    item.addEventListener('keyup', CalculateMain);
+
+});
+
+var total_des = 3;
+
+function CalculateDes(){
+    
+    var total=0;
+
+    for (let i = 1; i<= total_mains; i++){
+        itemID = document.getElementById("des_" + i);
+        total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+    }
+
+    if(total != 0){
+        total_value += total;
+    }else{
+        document.getElementById("DesTotal").dataset;
+    }
+    document.getElementById('DesTotal').innerHTML = "£ " + total;
+    
+
+
+}
+document.querySelectorAll('[id^="des_"]').forEach(item =>{
+    item.addEventListener('keyup', CalculateDes);
+
+});
+
+var total_drk = 3;
+
+function CalculateDrk(){
+    
+    var total=0;
+
+    for (let i = 1; i<= total_drk; i++){
+        itemID = document.getElementById("drk_" + i);
+        total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+    }
+    
+    if(total != 0){
+        total_value += total;
+    }else{
+        document.getElementById("DrkTotal").dataset;
+    }
+    document.getElementById('DrkTotal').innerHTML = "£ " + total;
+
+
+}
+document.querySelectorAll('[id^="drk_"]').forEach(item =>{
+    item.addEventListener('keyup', CalculateDrk);
+
+});
+
+function Total_calculator(){
+
+    document.getElementById("ItemsTotal").innerHTML = total_value;
+
+}
+function Total_reset(){
+    
+    total_value = 0;
+    document.getElementById("ItemsTotal").innerHTML = total_value;
+
+}
+
+function filterMenu(menu){
+
+    const menuNode = document.querySelector('#starters');
+    const starterOptions = menu.filter(
+        (option) => option.course == "Starter"
+
+    );
+
+    starterOptions.forEach((option) =>{
+        let dish = document.createElement("tr");
+        dish.textContent = option.name + " £ " + option.price;
+        menuNode.appendChild(dish);
+    });
+
+}*/
+
+
+
+
 

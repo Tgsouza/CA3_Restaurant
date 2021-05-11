@@ -225,7 +225,7 @@ header{
                   
 }
 
-table td, table tr{
+table td, table tr, #starters tr{
     margin-bottom: 20px;
     padding: 20px;
     border: 2px solid black;
@@ -236,5 +236,7 @@ th{
     padding: 20px 20px;
     width: 45%;
 }
+
+
 
 

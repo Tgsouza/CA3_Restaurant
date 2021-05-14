@@ -1,184 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="JS/scripts.js" defer></script>
     <script src="JS/menu.js" defer></script>
+    <style>
+     
+    </style>
     <title>Restaurant</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="row">
-        <!-- HEADER FOR THE WEBPAGE -->
-        <header>
-            <nav>
+      <!-- HEADER FOR THE WEBPAGE -->
+      <header>
+    <!-- ---NAV BAR--- -->
+        <nav navbar-expand-lg navbar-light bg-white right>
+          <div class="navbar navbar-light bg-ligh">
+            <a class="navbar-brand"href ="./index.html"><img src="./img/icons/fork.png" width="10%" height="10%" alt="knife and fork icon"></a>
 
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <a class="nav-link"href="page2.html">Menu</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+         <!-- STAFF PASSWORD VALIDATOR -->
 
-                <div class="row">
+    </div class="pass-container">
+      <div class="container">
+        <h3>STAFF PASSWORD</h3>
+        
+        <img class ="staffImg-container float-sm-left"src ="./img/containers-img/staff.png" alt="staff-img">
 
-                    <!-- ---NAV BAR--- -->
-                    <ul class="main-nav">
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Forum</a></li>
-                        <li><a href="#">About</a></li>
-                    </ul>
+        <!-- Password form -->
+        <form onsubmit="return verifyPass()">
+          <td>Enter Password:</td>
 
-                </div>
-            </nav>
-        </header>
+          <!-- User input for password -->
+          <input type="password" id="pswd" value="" />
+          <span id="message" style="color: red"></span><br />
 
-        <!-- STAFF PASSWORD VALIDATOR -->
-        <div class="staffPass">
+          <!-- Submit and Reset buttons -->
+          <input type="submit" id="submit_Button" class="btn btn-warning" value="Submit" />
+          <button type="reset" id="reset_Button"class="btn btn-warning" value="Reset">Reset</button>
+        </form>
 
-            <h1>STAFF PASSWORD</h1>
+        <!-- VALIDATOR -->
+        <div class="strong-container">
+          <p><strong>Password Must Contain The Following:</strong></p>
 
-            <!-- Password form -->
-            <form onsubmit="return verifyPass()">
-
-                <td>Enter Password: </td>
-
-                <!-- User input for password -->
-                <input type="password" id="pswd" value="">
-                <span id="message" style="color:red"></span><br>
-
-                <!-- Submit and Reset buttons -->
-                <input type="submit" class="submitButton" value="Submit">
-                <button type="reset" class="resetButton" value="Reset">Reset</button>
-
-            </form>
-
-            <!-- VALIDATOR -->
-            <div id="passValidation">
-
-                <h3>Password Must Contain The Following:</h3>
-
-                <p id="lowerCase" class="invalid">One lowercase character</p>
-                <p id="upperCase" class="invalid">One Uppercase character</p>
-                <p id="specChar" class="invalid">One special character</p>
-                <p id="hasNum" class="invalid">One digit</p>
-                <p id="minChar" class="invalid">At least 8 characters</p>
-
-            </div>
-
+          <p id="lowerCase" class="invalid">One lowercase character</p>
+          <p id="upperCase" class="invalid">One Uppercase character</p>
+          <p id="specChar" class="invalid">One special character</p>
+          <p id="hasNum" class="invalid">One digit</p>
+          <p id="minChar" class="invalid">At least 8 characters</p>
         </div>
-
-
+      </div>
     </div>
     <!-- USER GENERATOR -->
-    <div class="customer_gen">
 
-        <button id="customer_button">See customers</button>
-        <div id="customer_output"></div>
-
+    <div class="customer_gen container">
+      <button class ="btn btn-warning" id="customer_button">See customers</button>
+      <div id="customer_output"></div>
     </div>
     <!-- FORM FOR THE FOOD TABLE -->
-    <div class="food_form">
+    <div class="container">
+      <table class = "menu-container">
+        <tr class="container">
+          <!-- TABLE HEAD -->
+          <h3>Menu</h3>
+          <th scope="col">Item</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+        </tr>
+        <!-- MENU CREATED USING JQUERY, THE TABLE WILL BE MOUNTED USING THE ID OF THE TBODY -->
+        <th>Starters</th>
+        <td class="strHead"></td>
+        <td class="strHead"></td>
+        <td class="strHead"></td>
+        <tbody id="starters"></tbody>
 
-        <table>
-            <tr>
-                <!-- TABLE HEAD -->
-                <th scope="col">Item</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
+        <th>Main</th>
+        <td class="mainHead"></td>
+        <td class="mainHead"></td>
+        <td class="mainHead"></td>
+        <tbody id="mains"></tbody>
+        <th>Desserts</th>
+        <td class="desHead"></td>
+        <td class="desHead"></td>
+        <td class="desHead"></td>
+        <tbody id="desserts"></tbody>
+        <th>Drinks</th>
+        <td class="drkHead"></td>
+        <td class="drkHead"></td>
+        <td class="drkHead"></td>
+        <tbody id="drinks"></tbody>
 
+      </table>
+        <!-- BILL BREAKDOWN -->
+      
 
+        <table class ="bill container">
+            <h3 class="billbrk">Bill Breakdown</h3>
+            <td class="billBreak"></td>
+            <td class="billBreak"><strong>Description</strong></td>
+            <td class="billBreak"></td>
+            <td class="billBreak"><strong>Price</strong></td>
 
-            </tr>
-            <!-- MENU CREATED USING JQUERY, THE TABLE WILL BE MOUNTED USING THE ID OF THE TBODY -->
-            <th>Starters</th>
-            <tbody id="starters"> </tbody>
-            <th>Main</th>
-            <tbody id="mains"> </tbody>
-            <th>Desserts</th>
-            <tbody id="desserts"> </tbody>
-            <th>Drinks</th>
-            <tbody id="drinks"> </tbody>
-
-            <!-- BILL BREAKDOWN -->
-            <th>Bill Breakdown</th>
-            <tr>
-                <td class="totalStarter"></td>
-                <td class="totalStarter right">Starters: </td>
-                <td class="totalStarter"></td>
-                <td class="totalStarter">
-                    <strong>
-                        <div id="StrTotal">£ 0</div>
-                    </strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="totalMain"></td>
-                <td class="totalMain right">Mains: </td>
-                <td class="totalMain"></td>
-                <td class="totalMain">
-                    <strong>
-                        <div id="MainTotal">£ 0</div>
-                    </strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="totalDes"></td>
-                <td class="totalDes right">Desserts: </td>
-                <td class="totalDes"></td>
-                <td class="totalDes">
-                    <strong>
-                        <div id="DesTotal">£ 0</div>
-                    </strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="totalDrk"></td>
-                <td class="totalDrk right">Drinks: </td>
-                <td class="totalDrk"></td>
-                <td class="totalDrk">
-                    <strong>
-                        <div id="DrkTotal">£ 0</div>
-                    </strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="totalDrk"></td>
-                <td class="totalDrk right">Total Vegetarian: </td>
-                <td class="totalDrk"></td>
-                <td class="totalVeg">
-                    <strong>
-                        <div id="VegTotal">£ 0</div>
-                    </strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="totalVe"></td>
-                <td class="totalVe right">Total Non-Vegetarian: </td>
-                <td class="totalVe"></td>
-                <td class="totalVe">
-                    <strong>
-                        <div id="NonVegTotal">£ 0</div>
-                    </strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="totalValue"></td>
-                <td class="totalValue right">Total Bill: </td>
-                <td class="totalValue"></td>
-                <td class="totalValue">
-                    <strong>
-                        <div id="TotalValue">£ 0</div>
-                    </strong>
-                </td>
-            </tr>
-
+            
+        <tr>
+          <td class="totalStarter"></td>
+          <td class="totalStarter right">Starters:</td>
+          <td class="totalStarter"></td>
+          <td class="totalStarter">
+            <strong>
+              <div id="StrTotal">£ 0</div>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td class="totalMain"></td>
+          <td class="totalMain right">Mains:</td>
+          <td class="totalMain"></td>
+          <td class="totalMain">
+            <strong>
+              <div id="MainTotal">£ 0</div>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td class="totalDes"></td>
+          <td class="totalDes right">Desserts:</td>
+          <td class="totalDes"></td>
+          <td class="totalDes">
+            <strong>
+              <div id="DesTotal">£ 0</div>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td class="totalDrk"></td>
+          <td class="totalDrk right">Drinks:</td>
+          <td class="totalDrk"></td>
+          <td class="totalDrk">
+            <strong>
+              <div id="DrkTotal">£ 0</div>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td class="totalDrk"></td>
+          <td class="totalDrk right">Total Vegetarian:</td>
+          <td class="totalDrk"></td>
+          <td class="totalVeg">
+            <strong>
+              <div id="VegTotal">£ 0</div>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td class="totalVe"></td>
+          <td class="totalVe right">Total Non-Vegetarian:</td>
+          <td class="totalVe"></td>
+          <td class="totalVe">
+            <strong>
+              <div id="NonVegTotal">£ 0</div>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td class="totalValue"></td>
+          <td class="totalValue right">Total Bill:</td>
+          <td class="totalValue"></td>
+          <td class="totalValue">
+            <strong>
+              <div id="TotalValue">£ 0</div>
+            </strong>
+          </td>
+        </tr>
         </table>
+        
+        </div>
+    </table>
 
-        <table>
-
-        </table>
-    </div>
-</body>
-
+    <footer class="footer bg-light text-center text-lg-start">
+        <div class="footer-text text-center p-3" style="background-image: linear-gradient(-35deg,#F7882F,#DCC7AA, #F7C331)">
+            Thiago Gomes de Souza / Student Number 2020310 / CCT College
+        </div>
+    </footer>
+  </body>
 </html>

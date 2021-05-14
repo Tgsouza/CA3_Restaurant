@@ -118,10 +118,10 @@ function buildStarters(data) {
 
     for (var i = 0; i < 3; i++) {
 
-        var row = ` <tr>
+        var row = ` <tr class="name container">
                             <td>${data[i].name}</td>
                             <td>${data[i].description}</td>
-                            <td>${data[i].price}</td>
+                            <td>£ ${data[i].price}</td>
                             <td><input type="text" class="${data[i].class}" id="${data[i].id}" size="3" name="quantity" value="0" data-price="${data[i].price}"/></td>
                         </tr>
             `
@@ -174,7 +174,7 @@ function buildMains(data) {
         var row = ` <tr>
                             <td>${data[i].name}</td>
                             <td>${data[i].description}</td>
-                            <td>${data[i].price}</td>
+                            <td>£ ${data[i].price}</td>
                             <td><input type="text" class="qty" id=${data[i].id} size="3" name="quantity" value="0" data-price="${data[i].price}" /></td>
                         </tr>
             `
@@ -215,7 +215,7 @@ function buildDess(data) {
         var row = ` <tr>
                             <td>${data[i].name}</td>
                             <td>${data[i].description}</td>
-                            <td>${data[i].price}</td>
+                            <td>£ ${data[i].price}</td>
                             <td><input type="text" class="qty" id=${data[i].id} size="3" name="quantity" value="0" data-price="${data[i].price}" /></td>
 
                         </tr>
@@ -256,7 +256,7 @@ function buildDrkMenu(data) {
         var row = ` <tr>
                             <td>${data[i].name}</td>
                             <td>${data[i].description}</td>
-                            <td>${data[i].price}</td>
+                            <td>£ ${data[i].price}</td>
                             <td><input type="text" class="qty" id=${data[i].id} size="3" name="quantity" value="0" data-price="${data[i].price}" /></td>
 
                         </tr>

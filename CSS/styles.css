@@ -264,7 +264,9 @@ p{
                   
 }
 .each_customer{
-    background-color:#F7882F;
+    background-image: linear-gradient(-45deg, #F7C331,#DCC7AA, #F7882F);
+    border-radius: 5%;
+    border:2px solid #F7C331
 }
 #customer_button{
     

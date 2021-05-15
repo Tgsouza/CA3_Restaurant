@@ -118,7 +118,6 @@ myInput.onkeyup = function () {
             .then((data) => {
                 let author = data.results;
                 let output = '<h3>Customers</h3>'
-                console.log(data);
                 author.forEach(function (user) {
                     output += `
                 <div class="each_customer">

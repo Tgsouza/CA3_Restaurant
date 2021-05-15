@@ -4,30 +4,83 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/styles.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
-    <script src="JS/scripts.js" defer></script>
-    <script src="JS/menu.js" defer></script>
+    <link rel="stylesheet" href="./CSS/page2.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script src="./JS/page2.js" defer></script>
   </head>
-  <body>
-    <div class="row">
-        <!-- HEADER -->
-        <header>
-      <!-- ---NAV BAR--- -->
-          <nav navbar-expand-lg navbar-light bg-white right>
-            <div class="navbar navbar-light bg-ligh">
-              <a class="navbar-brand"href ="./index.html"><img src="./img/icons/fork.png" width="10%" height="10%" alt="knife and fork icon"></a>
-  
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link"href="page2.html">Menu</a>
-                  </li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-      </div>
 
-    
+  <div class="row">
+    <!-- HEADER -->
+    <header>
+      <!-- ---NAV BAR--- -->
+      <nav navbar-expand-lg navbar-light bg-white right>
+        <div class="navbar navbar-light bg-ligh">
+          <a class="navbar-brand" href="./index.html"
+            ><img
+              src="./img/icons/fork.png"
+              width="10%"
+              height="10%"
+              alt="knife and fork icon"
+          /></a>
+
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="page2.html">Menu</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <body>
+    <!-- Menu images container -->
+    <div class="container">
+      <div class="card">
+        <div class="foodCard">
+          <div class="circle"></div>
+          <img
+            src="./img/page2_animation/prep.jpg"
+            alt="Cheff Preperaing food"
+          />
+        </div>
+        <div class="info">
+          <h1 class="title">Hearth of Town Menu</h1>
+          <h2>
+            <span id="seeMore">In the hearth of dublin, we've been working for 20y with bringging you the best experience and, of course, best food</span>
+          </h2>
+          <button onclick="btnFuntion()" class="btn btn-warning" id="showBtn">
+            About
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer bg-light text-center text-lg-start">
+      <div
+        class="footer-text text-center p-3"
+        style="
+          background-image: linear-gradient(-35deg, #f7882f, #dcc7aa, #f7c331);
+        "
+      >
+        Thiago Gomes de Souza / Student Number 2020310 / CCT College
+      </div>
+    </footer>
+    <!-- Import Tweenmax library to create animations -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"
+      integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"
+      integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw=="
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

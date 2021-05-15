@@ -8,6 +8,7 @@ var menu = [
         price: 7,
         course: "Starter",
         id: "itm_0",
+        img: "../img/page2_animation/Starters/Wings.jpg"
 
     },
     {
